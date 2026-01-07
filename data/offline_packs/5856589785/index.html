@@ -1,0 +1,82 @@
+
+        <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Тактическая медицина - Офлайн справочник</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .section { margin-bottom: 30px; border-left: 4px solid #007bff; padding-left: 15px; }
+                .subsection { margin-left: 20px; margin-top: 15px; }
+                .content-item { background: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 5px; }
+                .media { max-width: 100%; height: auto; }
+                h1 { color: #dc3545; }
+                h2 { color: #007bff; }
+                .offline-badge { background: #28a745; color: white; padding: 5px 10px; border-radius: 3px; }
+            </style>
+        </head>
+        <body>
+            <h1>📚 Справочник по тактической медицине</h1>
+            <p><span class="offline-badge">ОФЛАЙН ВЕРСИЯ</span> Обновлено: 07.01.2026 00:58</p>
+            
+            <div id="content">
+        
+                <div class="section">
+                    <h2>📚 Правовая база</h2>
+                    <p>Приказы и стандарты тактической медицины</p>
+                
+                        <div class="subsection">
+                            <h3>Приказ МЗ РФ №220н</h3>
+                            <p>Общий перечень состояний и мероприятий</p>
+                        </div>
+                        <div class="subsection">
+                            <h3>Приказ МО РФ №760</h3>
+                            <p>Наставление по оказанию помощи в ВС РФ</p>
+                        </div>
+                        <div class="subsection">
+                            <h3>Стандарт оказания помощи</h3>
+                            <p>Тактические стандарты</p>
+                        </div></div>
+                <div class="section">
+                    <h2>📋 Перечни (Пр.№760)</h2>
+                    <p>Состояния и мероприятия</p>
+                </div>
+                <div class="section">
+                    <h2>🥊 Алгоритм КУЛАК БАРИН</h2>
+                    <p>Порядок приоритетов действий</p>
+                </div>
+                <div class="section">
+                    <h2>🆘 Базовый уровень помощи</h2>
+                    <p>Пошаговый алгоритм</p>
+                </div>
+            </div>
+            
+            <script>
+                // Простой поиск по странице
+                function searchContent() {
+                    var input = document.getElementById('searchInput');
+                    var filter = input.value.toUpperCase();
+                    var content = document.getElementById('content');
+                    var items = content.getElementsByClassName('content-item');
+                    
+                    for (var i = 0; i < items.length; i++) {
+                        var text = items[i].textContent || items[i].innerText;
+                        if (text.toUpperCase().indexOf(filter) > -1) {
+                            items[i].style.display = "";
+                        } else {
+                            items[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+            
+            <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Поиск по справочнику...">
+            
+            <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
+                <p>Данный справочник предназначен для использования в условиях отсутствия связи.</p>
+                <p>Основано на Приказе МО РФ №760 и стандартах тактической медицины.</p>
+            </footer>
+        </body>
+        </html>
+        
